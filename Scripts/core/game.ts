@@ -10,13 +10,14 @@
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 namespace core {
+    
     // Variable Declarations
     // make a reference to the canvas element
     let canvas: HTMLElement = document.getElementById("canvas");
     // create a reference to a stage container
-    let stage: createjs.Stage;
+    export let stage: createjs.Stage;
 
-    let helloLabel: createjs.Text;
+    let helloLabel: objects.Label;
 
     let startButton: objects.Button; // reference to our button class
 
@@ -62,11 +63,7 @@ namespace core {
      * @returns {void}
      */
     function main(): void {
-        helloLabel = new createjs.Text("Hello World!", "40px Consolas", "#000000");
-        helloLabel.regX = helloLabel.getMeasuredWidth() * 0.5;
-        helloLabel.regY = helloLabel.getMeasuredHeight() * 0.5;
-        helloLabel.x = 320;
-        helloLabel.y = 240;
+        helloLabel = new objects.Label("Hello World!", "40px", "Consolas", "#000000",320,240);
         stage.addChild(helloLabel);
 
         startButton = new objects.Button(
