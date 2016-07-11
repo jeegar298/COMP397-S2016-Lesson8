@@ -33,8 +33,8 @@ module objects {
          * @param {number} y
          * @param {boolean} isCentered
          */
-        constructor(pathString: string, x:number, y:number, isCentered:boolean) {
-            super(pathString);
+        constructor(imageString: string, x:number, y:number, isCentered:boolean) {
+            super(core.assets.getResult(imageString));
 
             // Check if user wants to change regX and regY values to the center 
             if(isCentered) {
